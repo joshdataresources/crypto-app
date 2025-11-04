@@ -1,0 +1,62 @@
+.transaction-details {
+  width: 100%;
+  padding: 16px 24px;
+  box-sizing: border-box; /* ensures padding doesn't shrink content area */
+}
+
+.transaction-details__values {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.transaction-details__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.transaction-details__label {
+  flex: 1; /* let label expand to fill available space */
+  min-width: 0; /* prevents overflow when text wraps */
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1;
+  color: #9BAACE;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-details__value-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0; /* prevent squishing */
+  gap: 8px;
+  min-width: 100px; /* optional: ensures space for value group */
+}
+
+.transaction-details__value {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: #FFFFFF;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.transaction-details__asset {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: #9BAACE;
+  text-align: right;
+  white-space: nowrap;
+  min-width: 53px;
+}

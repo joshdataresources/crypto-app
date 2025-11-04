@@ -1,0 +1,105 @@
+/**
+ * CryptoSelector Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Selector button */
+.crypto-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  background-color: #373e4d;
+  border: 1px solid #283043;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Active/open state */
+.crypto-selector--active {
+  border: 2px solid #297fff;
+  padding: 0 11px; /* Compensate for thicker border */
+}
+
+/* Hover state */
+.crypto-selector:hover {
+  opacity: 0.9;
+}
+
+/* Focus state for accessibility */
+.crypto-selector:focus-visible {
+  outline: 2px solid #297fff;
+  outline-offset: 2px;
+}
+
+/* Content container */
+.crypto-selector__content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Label text */
+.crypto-selector__label {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Label variants */
+.crypto-selector__label--buy {
+  color: #00c938;
+}
+
+.crypto-selector__label--sell {
+  color: #f62967;
+}
+
+.crypto-selector__label--regular {
+  color: #9baace;
+}
+
+/* Badges container */
+.crypto-selector__badges {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Single badge */
+.crypto-selector__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pair badges - overlapping */
+.crypto-selector__badge--primary {
+  position: relative;
+  z-index: 2;
+}
+
+.crypto-selector__badge--secondary {
+  position: relative;
+  z-index: 1;
+  margin-left: -7px; /* Overlap effect */
+}
+
+/* Display text */
+.crypto-selector__text {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ffffff;
+}
+
+/* Dropdown icon */
+.crypto-selector__icon {
+  flex-shrink: 0;
+  color: #9baace;
+}

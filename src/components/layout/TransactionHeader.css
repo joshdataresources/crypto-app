@@ -1,0 +1,189 @@
+/**
+ * TransactionHeader Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Container */
+.transaction-header {
+  background-color: #373E4D;
+  width: 100%;
+  display: flex;
+  padding: 0 20px 0 20px;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+/* Dragger */
+.transaction-header__dragger {
+  width: 100%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 136px;
+  background-color: #373E4D;
+}
+
+.transaction-header__dragger-bar {
+  width: 52px;
+  height: 4px;
+  background-color: #2A303C;
+  border-radius: 2px;
+}
+
+/* Content Container */
+.transaction-header__content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0 20px;
+  width: 100%;
+}
+
+/* Action Button */
+.transaction-header__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.transaction-header__action:hover {
+  opacity: 0.9;
+}
+
+.transaction-header__action:active {
+  opacity: 0.8;
+}
+
+/* Action Button Colors */
+.transaction-header__action--buy {
+  background-color: #00C938;
+  box-shadow: 0px 6px 10px 0px rgba(4, 198, 84, 0.22);
+}
+
+.transaction-header__action--sell {
+  background-color: #F62967;
+  box-shadow: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
+}
+
+.transaction-header__action--secondary {
+  background-color: #373E4D;
+  border: 1px solid #283043;
+  box-shadow: none;
+}
+
+/* Selector Button */
+.transaction-header__selector {
+  flex-shrink: 1;
+  min-width: 0;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  background-color: #373E4D;
+  border: 1px solid #283043;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.transaction-header__selector:hover {
+  background-color: #2A303C;
+}
+
+.transaction-header__selector:active {
+  background-color: #262D3E;
+}
+
+/* Selector Content */
+.transaction-header__selector-content {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* Label (Buy:, Sell:, etc.) */
+.transaction-header__label {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.transaction-header__label--buy {
+  color: #00C938;
+}
+
+.transaction-header__label--sell {
+  color: #F62967;
+}
+
+.transaction-header__label--secondary {
+  color: #9BAACE;
+}
+
+/* Display Text */
+.transaction-header__display-text {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Placeholder Text */
+.transaction-header__placeholder {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  color: #FFFFFF;
+  white-space: nowrap;
+}
+
+/* Dropdown Icon */
+.transaction-header__dropdown-icon {
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+/* Close Button */
+.transaction-header__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  padding: 12px;
+  background-color: transparent;
+  border: 1px solid #283043;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.transaction-header__close:hover {
+  background-color: #2A303C;
+}
+
+.transaction-header__close:active {
+  background-color: #262D3E;
+}

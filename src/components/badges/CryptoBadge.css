@@ -1,0 +1,19 @@
+/**
+ * CryptoBadge Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+.crypto-badge {
+  display: inline-block;
+  line-height: 0;
+  user-select: none;
+  flex-shrink: 0;
+  /* Size is controlled via inline styles (24px-44px range) */
+}
+
+.crypto-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

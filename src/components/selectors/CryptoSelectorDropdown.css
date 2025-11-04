@@ -1,0 +1,133 @@
+/**
+ * CryptoSelectorDropdown Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Dropdown container */
+.crypto-selector-dropdown {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #283043;
+  gap: 1px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.37);
+}
+
+/* Filters section with pill tabs */
+.crypto-selector-dropdown__filters {
+  padding: 8px 16px;
+  background-color: #373e4d;
+}
+
+/* List container */
+.crypto-selector-dropdown__list {
+  display: flex;
+  flex-direction: column;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+/* Individual list item */
+.crypto-selector-dropdown__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  padding: 8px 12px;
+  background-color: #373e4d;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: left;
+}
+
+/* Hover state */
+.crypto-selector-dropdown__item:hover {
+  background-color: #2a303c;
+}
+
+/* Selected state */
+.crypto-selector-dropdown__item--selected {
+  background-color: #2a303c;
+}
+
+/* Fixed state (non-selectable) */
+.crypto-selector-dropdown__item--fixed {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.crypto-selector-dropdown__item--fixed:hover {
+  background-color: #373e4d;
+}
+
+/* Focus state for accessibility */
+.crypto-selector-dropdown__item:focus-visible {
+  outline: 2px solid #297fff;
+  outline-offset: -2px;
+}
+
+/* Item content container */
+.crypto-selector-dropdown__item-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Badges container */
+.crypto-selector-dropdown__badges {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Badge wrapper */
+.crypto-selector-dropdown__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Primary badge (left) */
+.crypto-selector-dropdown__badge--primary {
+  position: relative;
+  z-index: 2;
+}
+
+/* Secondary badge (right, overlapping) */
+.crypto-selector-dropdown__badge--secondary {
+  position: relative;
+  z-index: 1;
+  margin-left: -7px; /* Overlap effect */
+}
+
+/* Pair name text */
+.crypto-selector-dropdown__pair-name {
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: #ffffff;
+}
+
+
+/* Scrollbar styling for webkit browsers */
+.crypto-selector-dropdown__list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.crypto-selector-dropdown__list::-webkit-scrollbar-track {
+  background: #262d3e;
+}
+
+.crypto-selector-dropdown__list::-webkit-scrollbar-thumb {
+  background: #373e4d;
+  border-radius: 4px;
+}
+
+.crypto-selector-dropdown__list::-webkit-scrollbar-thumb:hover {
+  background: #4a5163;
+}

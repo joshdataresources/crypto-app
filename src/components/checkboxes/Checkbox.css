@@ -1,0 +1,72 @@
+/**
+ * Checkbox Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Container */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox--fixed {
+  cursor: default;
+}
+
+/* Checkbox box */
+.checkbox__box {
+  position: absolute;
+  inset: 0;
+  background-color: #262d3e;
+  border: 1px solid #151a27;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* Selected state (blue border) */
+.checkbox--selected .checkbox__box {
+  border: 2px solid #297fff;
+}
+
+/* Fixed state (secondary border) */
+.checkbox--fixed .checkbox__box {
+  border: 2px solid #9baace;
+}
+
+/* Check icon */
+.checkbox__icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  color: #297fff;
+}
+
+/* Fixed state icon color */
+.checkbox--fixed .checkbox__icon {
+  color: #9baace;
+}
+
+/* Focus state for accessibility */
+.checkbox:focus-visible {
+  outline: 2px solid #297fff;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Hover state */
+.checkbox:not(.checkbox--disabled):not(.checkbox--fixed):hover .checkbox__box {
+  opacity: 0.9;
+}

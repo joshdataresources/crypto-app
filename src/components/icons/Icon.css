@@ -1,0 +1,32 @@
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.icon:hover {
+  opacity: 0.8;
+}
+
+/* Icon variants for common use cases */
+.icon--interactive {
+  cursor: pointer;
+}
+
+.icon--interactive:hover {
+  transform: scale(1.1);
+}
+
+.icon--rotating {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

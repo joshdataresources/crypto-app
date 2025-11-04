@@ -1,0 +1,146 @@
+.price-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Variants */
+.price-card--compact {
+  min-width: 200px;
+}
+
+.price-card--detailed {
+  min-width: 300px;
+}
+
+/* Header */
+.price-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.price-card__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.price-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price-card__name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.price-card__symbol {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* Body */
+.price-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.price-card__price {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.price-card__change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.price-card__change.positive {
+  background: rgba(52, 211, 153, 0.1);
+  color: #34d399;
+}
+
+.price-card__change.negative {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+}
+
+.price-card__change-icon {
+  font-size: 10px;
+}
+
+/* Loading state */
+.price-card--loading {
+  pointer-events: none;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: loading 1.5s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.skeleton--text {
+  height: 20px;
+  width: 120px;
+  margin-bottom: 12px;
+}
+
+.skeleton--price {
+  height: 32px;
+  width: 160px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error state */
+.price-card--error {
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+.price-card--error p {
+  margin: 0;
+  color: #f87171;
+  text-align: center;
+}

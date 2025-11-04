@@ -1,0 +1,244 @@
+/**
+ * Input Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Wrapper for label, input, and error message */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Label above input */
+.input__label {
+  padding: 0 8px;
+  margin-bottom: 8px;
+  color: #9BAACE;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Error message below input */
+.input__error {
+  padding: 0 8px;
+  margin-top: 6px;
+  color: #ED3737;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Base input container */
+.input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  background-color: #262D3E;
+  border: 1px solid #151A27;
+  border-radius: 6px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+/* Input field */
+.input__field {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  padding: 0 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.input__field::placeholder {
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.input__field:disabled::placeholder {
+  color: #9BAACE;
+}
+
+/* Active/Focused state */
+.input--active {
+  border: 2px solid #297FFF;
+}
+
+.input--active .input__field {
+  padding: 0 15px; /* Adjust for 2px border */
+}
+
+/* Error state */
+.input--error {
+  border: 2px solid #ED3737;
+}
+
+.input--error .input__field {
+  padding: 0 15px; /* Adjust for 2px border */
+}
+
+/* Disabled state */
+.input--disabled {
+  background-color: transparent;
+  border: 1px solid #151A27;
+  cursor: not-allowed;
+}
+
+.input--disabled .input__field {
+  color: #9BAACE;
+  cursor: not-allowed;
+}
+
+/* Icon type - input with icon */
+.input--icon .input__field {
+  padding-right: 50px;
+}
+
+.input__icon-button {
+  position: absolute;
+  right: 15px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input__icon-button:disabled {
+  cursor: not-allowed;
+}
+
+.input__icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Dropdown type - input with dropdown arrow */
+.input--dropdown .input__field {
+  padding-right: 45px;
+}
+
+.input__dropdown-icon {
+  position: absolute;
+  right: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Asset type - crypto input with badge and MAX button */
+.input--asset {
+  padding-left: 0;
+}
+
+.input--asset .input__field {
+  padding-left: 78px;
+  padding-right: 150px;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.2824px;
+  font-weight: 400;
+}
+
+.input__asset-badge {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 24px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #373E4D;
+  backdrop-filter: blur(2.311px);
+  border-radius: 5px;
+  color: #9BAACE;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.input--disabled .input__asset-badge {
+  background-color: #313848;
+}
+
+.input__asset-controls {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.input__secondary-text {
+  color: #9BAACE;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+  width: 104px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input__max-button {
+  height: 18px;
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #297FFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.input__max-button:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.input__max-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* Remove number input spinners */
+.input__field::-webkit-outer-spin-button,
+.input__field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input__field[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Focus visible for accessibility */
+.input:focus-within {
+  outline: none;
+}

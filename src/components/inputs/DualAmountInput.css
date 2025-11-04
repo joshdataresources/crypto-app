@@ -1,0 +1,110 @@
+/**
+ * DualAmountInput Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+.dual-amount-input {
+  width: 100%;
+  height: 88px;
+  position: relative;
+}
+
+/* Input Field Container */
+.dual-amount-input__field {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 44px;
+  background-color: #262d3e; /* Form Background */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 14px;
+}
+
+/* Top Field */
+.dual-amount-input__field--top {
+  top: 0;
+  border: 1px solid #151a27;
+  border-radius: 6px 6px 0 0;
+  border-bottom: none;
+}
+
+/* Bottom Field */
+.dual-amount-input__field--bottom {
+  top: 44px;
+  border: 1px solid #151a27;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+/* Asset Label (BTC, USD, etc.) */
+.dual-amount-input__label {
+  flex-shrink: 0;
+  width: 48px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #373e4d; /* Background 02 */
+  backdrop-filter: blur(2.311px);
+  border-radius: 5px;
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: #9baace; /* Text Secondary */
+  text-align: center;
+}
+
+/* Input Field */
+.dual-amount-input__input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: -0.2824px;
+  color: #ffffff; /* Text Inverse */
+}
+
+.dual-amount-input__input::placeholder {
+  color: #9baace;
+  opacity: 0.5;
+}
+
+.dual-amount-input__input:focus {
+  outline: none;
+}
+
+/* MAX Button */
+.dual-amount-input__max {
+  flex-shrink: 0;
+  width: 28px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-center;
+  background: none;
+  border: none;
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  color: #297fff; /* Brand */
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.dual-amount-input__max:hover {
+  opacity: 0.8;
+}
+
+.dual-amount-input__max:active {
+  opacity: 0.6;
+}

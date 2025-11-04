@@ -1,0 +1,38 @@
+/**
+ * BadgePair Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Container */
+.badge-pair {
+  display: inline-flex;
+  align-items: flex-start;
+  position: relative;
+  isolation: isolate; /* Create new stacking context */
+}
+
+/* Single badge mode */
+.badge-pair--single {
+  /* Just contains one badge, no special styling needed */
+}
+
+/* Pair mode with overlap (-8px achieved through negative margin) */
+.badge-pair--pair {
+  padding-right: 8px;
+}
+
+/* Primary badge (left, on top) */
+.badge-pair__primary {
+  position: relative;
+  z-index: 2;
+  margin-right: -8px; /* -8px overlap effect */
+  flex-shrink: 0;
+}
+
+/* Secondary badge (right, behind) */
+.badge-pair__secondary {
+  position: relative;
+  z-index: 1;
+  margin-right: -8px;
+  flex-shrink: 0;
+}

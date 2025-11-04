@@ -1,0 +1,68 @@
+/**
+ * PillTabs Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Container wrapper */
+.pill-tabs {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pill-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Inner container for tabs */
+.pill-tabs__container {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px 16px;
+  width: fit-content;
+  min-width: 100%;
+}
+
+/* Individual tab button */
+.pill-tabs__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 3px 8px;
+  background: none;
+  border: none;
+  border-radius: 14px;
+  color: #9BAACE;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+/* Hover state for inactive tabs */
+.pill-tabs__tab:hover:not(.pill-tabs__tab--active) {
+  opacity: 0.8;
+}
+
+/* Active tab state */
+.pill-tabs__tab--active {
+  background-color: #297FFF;
+  color: #FFFFFF;
+}
+
+/* Focus state for accessibility */
+.pill-tabs__tab:focus-visible {
+  outline: 2px solid #297FFF;
+  outline-offset: 2px;
+}

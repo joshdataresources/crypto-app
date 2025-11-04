@@ -1,0 +1,238 @@
+/**
+ * Button Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Base button styles */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 2px solid #297fff;
+  outline-offset: 2px;
+}
+
+/* Button content wrapper */
+.button__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.button__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.button__text {
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* Size variants */
+.button--big {
+  height: 44px;
+  padding: 10px 12px;
+  font-size: 16px;
+}
+
+.button--big .button__content {
+  gap: 8px;
+}
+
+.button--small {
+  height: 36px;
+  padding: 10px 8px;
+  font-size: 14px;
+}
+
+.button--small .button__content {
+  gap: 4px;
+}
+
+/* Brand variant */
+.button--brand {
+  background-color: #297fff;
+  color: #ffffff;
+  box-shadow: 0px 6px 10px 0px rgba(85, 118, 250, 0.2);
+}
+
+.button--brand:hover:not(:disabled) {
+  background-color: #1a6ee6;
+}
+
+.button--brand.button--active {
+  border: 2px solid #ffffff;
+}
+
+.button--brand.button--disabled {
+  background-color: rgba(85, 118, 250, 0.4);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Buy variant */
+.button--buy {
+  background-color: #00c938;
+  color: #ffffff;
+  box-shadow: 0px 6px 10px 0px rgba(4, 198, 84, 0.22);
+}
+
+.button--buy:hover:not(:disabled) {
+  background-color: #00b032;
+}
+
+.button--buy.button--active {
+  border: 2px solid #297fff;
+}
+
+.button--buy.button--disabled {
+  background-color: rgba(4, 198, 84, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Sell variant */
+.button--sell {
+  background-color: #f62967;
+  color: #ffffff;
+  box-shadow: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
+}
+
+.button--sell:hover:not(:disabled) {
+  background-color: #dd1e57;
+}
+
+.button--sell.button--active {
+  border: 2px solid #297fff;
+}
+
+.button--sell.button--disabled {
+  background-color: rgba(218, 22, 81, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Negative variant */
+.button--negative {
+  background-color: #ed3737;
+  color: #ffffff;
+  box-shadow: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
+}
+
+.button--negative:hover:not(:disabled) {
+  background-color: #d42828;
+}
+
+.button--negative.button--active {
+  border: 2px solid #297fff;
+}
+
+.button--negative.button--disabled {
+  background-color: rgba(218, 22, 81, 0.3);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Basic variant */
+.button--basic {
+  background-color: #2a303c;
+  color: #9baace;
+  border: 1px solid #171a20;
+}
+
+.button--basic:hover:not(:disabled) {
+  background-color: #343b49;
+}
+
+.button--basic.button--active {
+  border: 2px solid #297fff;
+  background-color: #2a303c;
+}
+
+.button--basic.button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Transparent variant */
+.button--transparent {
+  background-color: transparent;
+  color: #9baace;
+}
+
+.button--transparent:hover:not(:disabled) {
+  background-color: rgba(42, 48, 60, 0.5);
+}
+
+.button--transparent.button--active {
+  background-color: #2a303c;
+}
+
+.button--transparent.button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Line variant */
+.button--line {
+  background-color: transparent;
+  color: #9baace;
+  border: 1px solid #283043;
+}
+
+.button--line:hover:not(:disabled) {
+  background-color: rgba(42, 48, 60, 0.5);
+}
+
+.button--line.button--active {
+  background-color: #2a303c;
+  border: 1px solid #283043;
+}
+
+.button--line.button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Brand Opposite variant */
+.button--brandOpposite {
+  background-color: transparent;
+  color: #297fff;
+  border: 1px solid #171a20;
+}
+
+.button--brandOpposite:hover:not(:disabled) {
+  background-color: rgba(41, 127, 255, 0.1);
+}
+
+.button--brandOpposite.button--active {
+  border: 2px solid #297fff;
+}
+
+.button--brandOpposite.button--disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+}
+
+/* Disabled state for all variants */
+.button:disabled {
+  pointer-events: none;
+}

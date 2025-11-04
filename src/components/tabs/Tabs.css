@@ -1,0 +1,71 @@
+/**
+ * Tabs Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+/* Container wrapper */
+.tabs {
+  width: 100%;
+  border-bottom: 1px solid #283043;
+}
+
+/* Inner container for tabs */
+.tabs__container {
+  display: flex;
+  align-items: flex-start;
+  height: 44px;
+}
+
+/* Individual tab button */
+.tabs__tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  padding: 0 8px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #9baace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Hover state for inactive tabs */
+.tabs__tab:hover:not(.tabs__tab--active) {
+  opacity: 0.8;
+}
+
+/* Active tab base state */
+.tabs__tab--active {
+  color: #ffffff;
+}
+
+/* Active tab - brand variant (blue) */
+.tabs__tab--active-brand {
+  border-bottom-color: #297fff;
+}
+
+/* Active tab - buy variant (green) */
+.tabs__tab--active-buy {
+  border-bottom-color: #00c938;
+}
+
+/* Active tab - sell variant (pink/red) */
+.tabs__tab--active-sell {
+  border-bottom-color: #f62967;
+}
+
+/* Focus state for accessibility */
+.tabs__tab:focus-visible {
+  outline: 2px solid #297fff;
+  outline-offset: -2px;
+}

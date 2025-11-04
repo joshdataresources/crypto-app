@@ -1,0 +1,68 @@
+/**
+ * OrderTypeTabs Component Styles
+ * Design system: apex-mobile-v6-dark
+ */
+
+.order-type-tabs {
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #283043;
+  position: relative;
+}
+
+.order-type-tabs__buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.order-type-tabs__tab {
+  width: 106px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-family: 'Helvetica', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  color: #9BAACE;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.order-type-tabs__tab:hover {
+  color: #FFFFFF;
+}
+
+/* Active State */
+.order-type-tabs__tab--active {
+  color: #FFFFFF;
+}
+
+/* Active Indicator Line */
+.order-type-tabs__tab--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+}
+
+/* Buy Indicator (Green) */
+.order-type-tabs__tab--active.order-type-tabs__tab--buy::after {
+  background-color: #00C938;
+}
+
+/* Sell Indicator (Pink) */
+.order-type-tabs__tab--active.order-type-tabs__tab--sell::after {
+  background-color: #F62967;
+}

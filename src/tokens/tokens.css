@@ -1,0 +1,130 @@
+/**
+ * Design Tokens - CSS Variables
+ *
+ * Semantic color tokens that support light and dark themes
+ * Maps to tokens/colors.ts
+ */
+
+/* Dark Theme (Default) */
+:root {
+  /* Highlights */
+  --color-brand-solid: #297FFF;
+  --color-brand-background: #1C4C94;
+  --color-brand-disabled: rgba(85, 118, 250, 0.4);
+  --color-bitcoin: #FC9416;
+  --color-buy: #00C938;
+  --color-buy-disabled: rgba(4, 198, 84, 0.3);
+  --color-sell: #F62967;
+  --color-sell-disabled: rgba(218, 22, 81, 0.3);
+  --color-error: #ED3737;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9BAACE;
+  --color-text-disabled: #C2CADB;
+  --color-text-inverse: #FFFFFF;
+
+  /* Forms */
+  --color-forms-border: #151A27;
+  --color-forms-background: #262D3E;
+  --color-forms-on-dark: rgba(0, 0, 0, 0.1);
+
+  /* Buttons */
+  --color-button-2nd-bg: #2A303C;
+  --color-button-2nd-border: #171A20;
+
+  /* Backgrounds */
+  --color-background-01: #313848;
+  --color-background-02: #373E4D;
+  --color-toolbar-bg-blur: rgba(49, 56, 72, 0.31);
+
+  /* Dividers */
+  --color-border-01: #0A0C12;
+  --color-border-02: #182034;
+  --color-border-03: #283043;
+  --color-border-04-transparent: rgba(206, 214, 229, 0.4);
+
+  /* Shadows */
+  --shadow-buy: 0px 6px 10px 0px rgba(4, 198, 84, 0.22);
+  --shadow-sell: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
+  --shadow-brand: 0px 6px 10px 0px rgba(85, 118, 250, 0.2);
+}
+
+/* Light Theme */
+[data-theme="light"],
+.light-theme {
+  /* Highlights */
+  --color-brand-solid: #3D63FF;
+  --color-brand-background: #2D4DCE;
+  --color-brand-disabled: rgba(85, 118, 250, 0.4);
+  --color-bitcoin: #FC9416;
+  --color-buy: #00C938;
+  --color-buy-disabled: rgba(4, 198, 84, 0.3);
+  --color-sell: #E81F5B;
+  --color-sell-disabled: rgba(218, 22, 81, 0.3);
+  --color-error: #DA1616;
+
+  /* Text */
+  --color-text-primary: #393F62;
+  --color-text-secondary: #8393B7;
+  --color-text-disabled: #C2CADB;
+  --color-text-inverse: #FFFFFF;
+
+  /* Forms */
+  --color-forms-border: #D5DBE6;
+  --color-forms-background: #F6F7F9;
+  --color-forms-on-dark: rgba(0, 0, 0, 0.1);
+
+  /* Buttons */
+  --color-button-2nd-bg: #E6E9EF;
+  --color-button-2nd-border: #D3D9E3;
+
+  /* Backgrounds */
+  --color-background-01: #FAFAFA;
+  --color-background-02: #FFFFFF;
+  --color-toolbar-bg-blur: rgba(250, 250, 250, 0.6);
+
+  /* Dividers */
+  --color-border-01: #8998B9;
+  --color-border-02: #C2CADB;
+  --color-border-03: #E6EAF2;
+  --color-border-04-transparent: rgba(206, 214, 229, 0.4);
+
+  /* Shadows remain the same for light theme */
+  --shadow-buy: 0px 6px 10px 0px rgba(4, 198, 84, 0.22);
+  --shadow-sell: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
+  --shadow-brand: 0px 6px 10px 0px rgba(85, 118, 250, 0.2);
+}
+
+/* Support for prefers-color-scheme media query */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    /* Highlights */
+    --color-brand-solid: #3D63FF;
+    --color-brand-background: #2D4DCE;
+    --color-sell: #E81F5B;
+    --color-error: #DA1616;
+
+    /* Text */
+    --color-text-primary: #393F62;
+    --color-text-secondary: #8393B7;
+
+    /* Forms */
+    --color-forms-border: #D5DBE6;
+    --color-forms-background: #F6F7F9;
+
+    /* Buttons */
+    --color-button-2nd-bg: #E6E9EF;
+    --color-button-2nd-border: #D3D9E3;
+
+    /* Backgrounds */
+    --color-background-01: #FAFAFA;
+    --color-background-02: #FFFFFF;
+    --color-toolbar-bg-blur: rgba(250, 250, 250, 0.6);
+
+    /* Dividers */
+    --color-border-01: #8998B9;
+    --color-border-02: #C2CADB;
+    --color-border-03: #E6EAF2;
+  }
+}
