@@ -83,6 +83,7 @@
 
 /* Selector Button */
 .transaction-header__selector {
+  flex-grow: 1; /* Stretch to fill available space */
   flex-shrink: 1;
   min-width: 0;
   height: 44px;

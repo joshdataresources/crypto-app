@@ -1,0 +1,18 @@
+/**
+ * PairCryptoSelector Component Styles
+ * Dropdown with Pairs/Crypto toggle
+ */
+
+.pair-crypto-selector {
+  background: #283043; /* Border 03 */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.37);
+  width: 305px;
+}
+
+.pair-crypto-selector__header {
+  background: #373E4D; /* Background 02 */
+  padding: 8px 12px;
+  border-bottom: 1px solid #283043; /* Border 03 */
+}

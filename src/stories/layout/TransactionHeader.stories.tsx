@@ -365,3 +365,28 @@ export const AllVariantsEmpty: Story = {
     );
   },
 };
+
+// Stretched Layout Demo - Shows how the selector stretches to fill space
+export const StretchedLayout: Story = {
+  args: {
+    type: 'buy-pair',
+    state: 'default',
+    primaryCrypto: 'BTC',
+    secondaryCrypto: 'USDT',
+    displayText: 'BTCUSD',
+  },
+  render: (args) => {
+    return (
+      <div style={{ width: '100%', maxWidth: '600px', background: '#262D3E', padding: '20px' }}>
+        <h3 style={{ color: '#9BAACE', marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+          Stretched Layout (Buy/Sell on left, Selector fills middle, Close on right)
+        </h3>
+        <TransactionHeader {...args} />
+        <p style={{ color: '#9BAACE', marginTop: '16px', fontSize: '12px', lineHeight: '1.5' }}>
+          The selector button now stretches to fill available space between the action and close buttons.
+          This creates a more balanced layout across the full width of the screen.
+        </p>
+      </div>
+    );
+  },
+};

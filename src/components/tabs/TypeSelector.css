@@ -1,0 +1,44 @@
+/**
+ * TypeSelector Component Styles
+ * Toggle tabs for Pairs/Crypto selection
+ */
+
+.type-selector {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.type-selector__tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding: 3px 8px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  /* Caption Bold typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #9BAACE; /* Text Secondary */
+  white-space: nowrap;
+}
+
+.type-selector__tab:hover {
+  background: rgba(41, 127, 255, 0.1);
+}
+
+.type-selector__tab--active {
+  background: #297FFF; /* Brand Solid */
+  color: #FFFFFF; /* Text Inverse */
+}
+
+.type-selector__tab--active:hover {
+  background: #297FFF;
+}
