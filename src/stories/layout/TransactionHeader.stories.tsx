@@ -248,6 +248,10 @@ export const ConvertEmpty: Story = {
 
 // All Variants - Default State
 export const AllVariantsDefault: Story = {
+  args: {
+    type: 'buy-pair',
+    state: 'default',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -322,6 +326,10 @@ export const AllVariantsDefault: Story = {
 
 // All Variants - Empty State
 export const AllVariantsEmpty: Story = {
+  args: {
+    type: 'buy-pair',
+    state: 'empty',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>

@@ -87,6 +87,9 @@ type Story = StoryObj<typeof meta>;
 
 // Overview Demo - Clean showcase of all button variants
 export const Overview: Story = {
+  args: {
+    children: 'Button',
+  },
   render: () => (
     <div style={{
       display: 'flex',
@@ -475,6 +478,9 @@ export const WithoutIcon: Story = {
 
 // Icon visibility control
 export const IconVisibilityControl: Story = {
+  args: {
+    children: 'Button',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
@@ -491,6 +497,9 @@ export const IconVisibilityControl: Story = {
 
 // All variants showcase
 export const AllVariants: Story = {
+  args: {
+    children: 'Button',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
@@ -516,6 +525,9 @@ export const AllVariants: Story = {
 
 // States showcase
 export const AllStates: Story = {
+  args: {
+    children: 'Button',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       <div>

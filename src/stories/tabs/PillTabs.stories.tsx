@@ -64,6 +64,10 @@ type Story = StoryObj<typeof meta>;
 
 // Crypto Tabs (as shown in Figma)
 export const CryptoTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'usdt',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('usdt');
 
@@ -97,6 +101,10 @@ export const CryptoTabs: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'all',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('all');
 
@@ -127,6 +135,10 @@ export const Interactive: Story = {
 
 // Few Tabs
 export const FewTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'buy',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('buy');
 
@@ -150,6 +162,10 @@ export const FewTabs: Story = {
 
 // Many Tabs (Scrollable)
 export const ManyTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'all',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('all');
 
@@ -183,6 +199,10 @@ export const ManyTabs: Story = {
 
 // Time Period Tabs
 export const TimePeriodTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: '1d',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('1d');
 
@@ -213,6 +233,10 @@ export const TimePeriodTabs: Story = {
 
 // Order Type Tabs
 export const OrderTypeTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'limit',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('limit');
 
@@ -239,6 +263,10 @@ export const OrderTypeTabs: Story = {
 
 // All States Demo
 export const AllStates: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'usdt',
+  },
   render: () => {
     const [tab1, setTab1] = useState('usdt');
     const [tab2, setTab2] = useState('buy');

@@ -104,6 +104,12 @@ type Story = StoryObj<typeof meta>;
 
 // Overview Demo
 export const Overview: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => {
     return (
       <div style={{
@@ -163,6 +169,12 @@ export const Overview: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => {
     const [btcValue, setBtcValue] = useState('0.5');
     const [usdValue, setUsdValue] = useState('10253.25');
@@ -223,6 +235,12 @@ export const Initial: Story = {
 
 // Top Field Error
 export const TopFieldError: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ minWidth: '400px' }}>
       <CurrencyPairInput
@@ -243,6 +261,12 @@ export const TopFieldError: Story = {
 
 // Bottom Field Error
 export const BottomFieldError: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ minWidth: '400px' }}>
       <CurrencyPairInput
@@ -263,6 +287,12 @@ export const BottomFieldError: Story = {
 
 // ETH to USD
 export const ETHtoUSD: Story = {
+  args: {
+    topCurrency: 'ETH',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => {
     const [ethValue, setEthValue] = useState('2.5');
     const [usdValue, setUsdValue] = useState('5000.00');
@@ -284,6 +314,12 @@ export const ETHtoUSD: Story = {
 
 // ADA to BTC
 export const ADAtoBTC: Story = {
+  args: {
+    topCurrency: 'ADA',
+    bottomCurrency: 'BTC',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => {
     const [adaValue, setAdaValue] = useState('1000');
     const [btcValue, setBtcValue] = useState('0.0195');
@@ -354,6 +390,12 @@ export const Disabled: Story = {
 
 // All States Comparison
 export const AllStates: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: '400px' }}>
       <div>
@@ -408,6 +450,12 @@ export const AllStates: Story = {
 
 // With Label
 export const WithLabel: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: '400px' }}>
       <CurrencyPairInput
@@ -434,6 +482,12 @@ export const WithLabel: Story = {
 
 // With Error Message
 export const WithErrorMessage: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: '400px' }}>
       <CurrencyPairInput
@@ -462,6 +516,12 @@ export const WithErrorMessage: Story = {
 
 // With Label and Error Message
 export const WithLabelAndError: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', minWidth: '400px' }}>
       <CurrencyPairInput
@@ -492,6 +552,12 @@ export const WithLabelAndError: Story = {
 
 // Trading Form Example
 export const TradingFormExample: Story = {
+  args: {
+    topCurrency: 'BTC',
+    bottomCurrency: 'USD',
+    topValue: '0',
+    bottomValue: '0',
+  },
   render: () => {
     const [btcValue, setBtcValue] = useState('');
     const [usdValue, setUsdValue] = useState('');

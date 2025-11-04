@@ -125,6 +125,10 @@ export const Error: Story = {
 
 // All Variants
 export const AllVariants: Story = {
+  args: {
+    variant: 'buy',
+    text: 'Buy',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -173,6 +177,10 @@ export const AllVariants: Story = {
 
 // Custom Text Examples
 export const CustomText: Story = {
+  args: {
+    variant: 'buy',
+    text: 'Buy',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
@@ -198,6 +206,10 @@ export const CustomText: Story = {
 
 // Interactive Demo
 export const InteractiveDemo: Story = {
+  args: {
+    variant: 'buy',
+    text: 'Buy',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

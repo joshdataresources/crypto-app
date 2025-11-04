@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CryptoSelector } from '../../components/selectors/CryptoSelector';
-import { CryptoSelectorDropdown, CryptoPair } from '../../components/selectors/CryptoSelectorDropdown';
+import { CryptoSelectorDropdown } from '../../components/selectors/CryptoSelectorDropdown';
+import type { CryptoPair } from '../../components/selectors/CryptoSelectorDropdown';
 import { useState } from 'react';
 
 const meta = {
@@ -73,7 +74,7 @@ type Story = StoryObj<typeof meta>;
 const usdtPairs: CryptoPair[] = [
   { id: '1', primary: 'BTC', secondary: 'USDT', displayName: 'BTC/USDT', category: 'USDT' },
   { id: '2', primary: 'ETH', secondary: 'USDT', displayName: 'ETH/USDT', category: 'USDT' },
-  { id: '3', primary: 'BNB', secondary: 'USDT', displayName: 'BNB/USDT', category: 'USDT' },
+  { id: '3', primary: 'LTC', secondary: 'USDT', displayName: 'LTC/USDT', category: 'USDT' },
   { id: '4', primary: 'ADA', secondary: 'USDT', displayName: 'ADA/USDT', category: 'USDT' },
   { id: '5', primary: 'XRP', secondary: 'USDT', displayName: 'XRP/USDT', category: 'USDT' },
   { id: '6', primary: 'LTC', secondary: 'USDT', displayName: 'LTC/USDT', category: 'USDT' },
@@ -81,12 +82,12 @@ const usdtPairs: CryptoPair[] = [
 
 const btcPairs: CryptoPair[] = [
   { id: '7', primary: 'ETH', secondary: 'BTC', displayName: 'ETH/BTC', category: 'BTC' },
-  { id: '8', primary: 'BNB', secondary: 'BTC', displayName: 'BNB/BTC', category: 'BTC' },
+  { id: '8', primary: 'LTC', secondary: 'BTC', displayName: 'LTC/BTC', category: 'BTC' },
   { id: '9', primary: 'ADA', secondary: 'BTC', displayName: 'ADA/BTC', category: 'BTC' },
 ];
 
 const ethPairs: CryptoPair[] = [
-  { id: '10', primary: 'BNB', secondary: 'ETH', displayName: 'BNB/ETH', category: 'ETH' },
+  { id: '10', primary: 'LTC', secondary: 'ETH', displayName: 'LTC/ETH', category: 'ETH' },
   { id: '11', primary: 'ADA', secondary: 'ETH', displayName: 'ADA/ETH', category: 'ETH' },
 ];
 

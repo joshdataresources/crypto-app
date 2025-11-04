@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { CryptoSelector } from '../../components/selectors/CryptoSelector';
+import type { CryptoBadgeName } from '../../components/badges/CryptoBadge';
 import { useState } from 'react';
 
 const meta = {
@@ -83,6 +84,10 @@ type Story = StoryObj<typeof meta>;
 
 // Buy Variant with Pair
 export const BuyPair: Story = {
+  args: {
+    cryptoBadges: ['BTC', 'USDT'],
+    displayText: 'BTC/USDT',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -106,6 +111,10 @@ export const BuyPair: Story = {
 
 // Sell Variant with Pair
 export const SellPair: Story = {
+  args: {
+    cryptoBadges: ['ETH', 'USDT'],
+    displayText: 'ETH/USDT',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -129,6 +138,10 @@ export const SellPair: Story = {
 
 // Regular Variant with Label
 export const RegularWithLabel: Story = {
+  args: {
+    cryptoBadges: ['LTC', 'BTC'],
+    displayText: 'LTC/BTC',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -136,8 +149,8 @@ export const RegularWithLabel: Story = {
       <div style={{ width: '343px' }}>
         <CryptoSelector
           label="Title:"
-          cryptoBadges={["BNB", "BTC"]}
-          displayText="BNB/BTC"
+          cryptoBadges={["LTC", "BTC"]}
+          displayText="LTC/BTC"
           variant="regular"
           isOpen={isOpen}
           onClick={() => setIsOpen(!isOpen)}
@@ -152,6 +165,10 @@ export const RegularWithLabel: Story = {
 
 // Single Crypto (No Pair)
 export const SingleCrypto: Story = {
+  args: {
+    cryptoBadges: 'BTC',
+    displayText: 'Bitcoin',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -174,6 +191,10 @@ export const SingleCrypto: Story = {
 
 // No Label
 export const NoLabel: Story = {
+  args: {
+    cryptoBadges: ['ADA', 'USDT'],
+    displayText: 'ADA/USDT',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -206,6 +227,10 @@ export const ActiveState: Story = {
 
 // All Variants Demo
 export const AllVariants: Story = {
+  args: {
+    cryptoBadges: ['BTC', 'USDT'],
+    displayText: 'BTC/USDT',
+  },
   render: () => {
     const [buyOpen, setBuyOpen] = useState(false);
     const [sellOpen, setSellOpen] = useState(false);
@@ -245,8 +270,8 @@ export const AllVariants: Story = {
           </h4>
           <CryptoSelector
             label="Title:"
-            cryptoBadges={["BNB", "BTC"]}
-            displayText="BNB/BTC"
+            cryptoBadges={["LTC", "BTC"]}
+            displayText="LTC/BTC"
             variant="regular"
             isOpen={regularOpen}
             onClick={() => setRegularOpen(!regularOpen)}
@@ -259,14 +284,18 @@ export const AllVariants: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
+  args: {
+    cryptoBadges: ['BTC', 'USDT'],
+    displayText: 'BTC/USDT',
+  },
   render: () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedPair, setSelectedPair] = useState<[string, string]>(["BTC", "USDT"]);
+    const [selectedPair, setSelectedPair] = useState<[CryptoBadgeName, CryptoBadgeName]>(["BTC", "USDT"]);
 
-    const pairs: Array<[string, string]> = [
+    const pairs: Array<[CryptoBadgeName, CryptoBadgeName]> = [
       ["BTC", "USDT"],
       ["ETH", "USDT"],
-      ["BNB", "USDT"],
+      ["LTC", "USDT"],
       ["ADA", "USDT"],
     ];
 

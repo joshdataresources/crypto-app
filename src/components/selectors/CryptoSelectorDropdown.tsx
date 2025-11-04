@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { PillTabs, PillTab } from '../tabs/PillTabs';
+import { PillTabs } from '../tabs/PillTabs';
+import type { PillTab } from '../tabs/PillTabs';
 import { CryptoBadge } from '../badges/CryptoBadge';
 import type { CryptoBadgeName } from '../badges/CryptoBadge';
 import { Checkbox } from '../checkboxes/Checkbox';
@@ -42,7 +43,7 @@ export interface CryptoPair {
 
 export interface CryptoSelectorDropdownProps {
   /** Array of dropdown items to display */
-  items: DropdownSelectorItem[];
+  items?: DropdownSelectorItem[];
   /** Currently selected item IDs */
   selectedIds?: string[];
   /** Filter tabs for categorization */

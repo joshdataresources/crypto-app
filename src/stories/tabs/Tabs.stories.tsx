@@ -74,6 +74,10 @@ type Story = StoryObj<typeof meta>;
 
 // Buy Order Tabs (Green underline - as shown in Figma)
 export const BuyOrderTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'limit',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('limit');
 
@@ -101,6 +105,10 @@ export const BuyOrderTabs: Story = {
 
 // Sell Order Tabs (Pink underline - as shown in Figma)
 export const SellOrderTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'limit',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('limit');
 
@@ -128,6 +136,10 @@ export const SellOrderTabs: Story = {
 
 // Brand Tabs (Blue underline - as shown in Figma)
 export const BrandTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'tab1',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('tab1');
 
@@ -155,6 +167,10 @@ export const BrandTabs: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'spot',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('spot');
 
@@ -185,6 +201,10 @@ export const Interactive: Story = {
 
 // Two Tabs
 export const TwoTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'buy',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('buy');
 
@@ -208,6 +228,10 @@ export const TwoTabs: Story = {
 
 // Four Tabs
 export const FourTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'open',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('open');
 
@@ -233,6 +257,10 @@ export const FourTabs: Story = {
 
 // Wallet Tabs
 export const WalletTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'crypto',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('crypto');
 
@@ -260,6 +288,10 @@ export const WalletTabs: Story = {
 
 // History Tabs
 export const HistoryTabs: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'deposits',
+  },
   render: () => {
     const [activeTab, setActiveTab] = useState('deposits');
 
@@ -287,6 +319,10 @@ export const HistoryTabs: Story = {
 
 // All Variants Demo
 export const AllVariants: Story = {
+  args: {
+    tabs: [],
+    activeTab: 'limit',
+  },
   render: () => {
     const [buyTab, setBuyTab] = useState('limit');
     const [sellTab, setSellTab] = useState('limit');

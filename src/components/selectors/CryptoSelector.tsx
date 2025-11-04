@@ -89,7 +89,7 @@ export const CryptoSelector: React.FC<CryptoSelectorProps> = ({
         <span className="crypto-selector__text">{displayText}</span>
       </div>
 
-      <Icon name="Dropdown" size={16} className="crypto-selector__icon" />
+      <Icon name="dropdown" className="crypto-selector__icon" />
     </button>
   );
 };

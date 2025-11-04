@@ -15,11 +15,4 @@ export { spacing } from './spacing';
 export type { SpacingTokens } from './spacing';
 
 export { typography } from './typography';
-export type { TypographyTokens } from './typography';
-
-// Re-export all tokens as a single object for convenience
-export const tokens = {
-  colors,
-  spacing,
-  typography,
-} as const;
+export type { TypographyVariant, TypographyWeight } from './typography';

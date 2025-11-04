@@ -92,6 +92,9 @@ export const SingleBadge: Story = {
 
 // All Common Pairs
 export const AllCommonPairs: Story = {
+  args: {
+    primary: 'BTC',
+  },
   render: () => {
     const pairs = [
       { primary: 'BTC' as const, secondary: 'USDT' as const },
@@ -119,6 +122,9 @@ export const AllCommonPairs: Story = {
 
 // Different Sizes
 export const DifferentSizes: Story = {
+  args: {
+    primary: 'BTC',
+  },
   render: () => {
     const sizes = [24, 32, 44];
 
@@ -139,6 +145,9 @@ export const DifferentSizes: Story = {
 
 // Single vs Pair Comparison
 export const SingleVsPair: Story = {
+  args: {
+    primary: 'BTC',
+  },
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -169,6 +178,9 @@ export const SingleVsPair: Story = {
 
 // In Context (like CryptoSelector)
 export const InContext: Story = {
+  args: {
+    primary: 'BTC',
+  },
   render: () => {
     return (
       <div
@@ -197,6 +209,9 @@ export const InContext: Story = {
 
 // All Cryptos Grid
 export const AllCryptosGrid: Story = {
+  args: {
+    primary: 'BTC',
+  },
   render: () => {
     const cryptos = ['BTC', 'ETH', 'LTC', 'XRP', 'DASH', 'XMR', 'ADA', 'MIOTA', 'BCH', 'USDT'] as const;
 

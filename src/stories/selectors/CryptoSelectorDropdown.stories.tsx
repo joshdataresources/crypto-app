@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { CryptoSelectorDropdown, CryptoPair, DropdownSelectorItem } from '../../components/selectors/CryptoSelectorDropdown';
+import { CryptoSelectorDropdown } from '../../components/selectors/CryptoSelectorDropdown';
+import type { CryptoPair, DropdownSelectorItem } from '../../components/selectors/CryptoSelectorDropdown';
 import { useState } from 'react';
 
 const meta = {
@@ -95,7 +96,7 @@ type Story = StoryObj<typeof meta>;
 const usdtPairs: CryptoPair[] = [
   { id: '1', primary: 'BTC', secondary: 'USDT', displayName: 'BTC/USDT', category: 'USDT' },
   { id: '2', primary: 'ETH', secondary: 'USDT', displayName: 'ETH/USDT', category: 'USDT' },
-  { id: '3', primary: 'BNB', secondary: 'USDT', displayName: 'BNB/USDT', category: 'USDT' },
+  { id: '3', primary: 'LTC', secondary: 'USDT', displayName: 'LTC/USDT', category: 'USDT' },
   { id: '4', primary: 'ADA', secondary: 'USDT', displayName: 'ADA/USDT', category: 'USDT' },
   { id: '5', primary: 'XRP', secondary: 'USDT', displayName: 'XRP/USDT', category: 'USDT' },
   { id: '6', primary: 'LTC', secondary: 'USDT', displayName: 'LTC/USDT', category: 'USDT' },
@@ -103,13 +104,13 @@ const usdtPairs: CryptoPair[] = [
 
 const btcPairs: CryptoPair[] = [
   { id: '7', primary: 'ETH', secondary: 'BTC', displayName: 'ETH/BTC', category: 'BTC' },
-  { id: '8', primary: 'BNB', secondary: 'BTC', displayName: 'BNB/BTC', category: 'BTC' },
+  { id: '8', primary: 'LTC', secondary: 'BTC', displayName: 'LTC/BTC', category: 'BTC' },
   { id: '9', primary: 'ADA', secondary: 'BTC', displayName: 'ADA/BTC', category: 'BTC' },
   { id: '10', primary: 'XRP', secondary: 'BTC', displayName: 'XRP/BTC', category: 'BTC' },
 ];
 
 const ethPairs: CryptoPair[] = [
-  { id: '11', primary: 'BNB', secondary: 'ETH', displayName: 'BNB/ETH', category: 'ETH' },
+  { id: '11', primary: 'LTC', secondary: 'ETH', displayName: 'LTC/ETH', category: 'ETH' },
   { id: '12', primary: 'ADA', secondary: 'ETH', displayName: 'ADA/ETH', category: 'ETH' },
 ];
 
@@ -124,6 +125,9 @@ const filterTabs = [
 
 // Single Select with Filters
 export const SingleSelect: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>(['1']);
 
@@ -150,6 +154,9 @@ export const SingleSelect: Story = {
 
 // Multi-Select with Checkboxes
 export const MultiSelect: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>(['1', '2']);
 
@@ -176,6 +183,9 @@ export const MultiSelect: Story = {
 
 // Without Filters
 export const WithoutFilters: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>([]);
 
@@ -198,6 +208,9 @@ export const WithoutFilters: Story = {
 
 // USDT Pairs Only
 export const USDTPairsOnly: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>([]);
 
@@ -220,6 +233,9 @@ export const USDTPairsOnly: Story = {
 
 // Long List (Scrollable)
 export const LongList: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>([]);
 
@@ -254,6 +270,9 @@ export const LongList: Story = {
 
 // Interactive Example
 export const Interactive: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>(['1']);
 
@@ -294,6 +313,9 @@ export const Interactive: Story = {
 
 // Empty State
 export const EmptyState: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedPairs, setSelectedPairs] = useState<string[]>([]);
 
@@ -330,6 +352,9 @@ export const Static: Story = {
 
 // All Item Types (Pair vs Crypto)
 export const AllItemTypes: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedIds, setSelectedIds] = useState<string[]>(['1']);
 
@@ -390,6 +415,9 @@ export const AllItemTypes: Story = {
 
 // All Checkbox States
 export const AllCheckboxStates: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedIds, setSelectedIds] = useState<string[]>(['2']);
 
@@ -455,6 +483,9 @@ export const AllCheckboxStates: Story = {
 
 // Selectable vs Non-Selectable
 export const SelectableItems: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedIds, setSelectedIds] = useState<string[]>(['1']);
 
@@ -523,6 +554,9 @@ export const SelectableItems: Story = {
 
 // With and Without Checkboxes
 export const ShowCheckProperty: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedIds, setSelectedIds] = useState<string[]>(['1']);
 
@@ -581,6 +615,9 @@ export const ShowCheckProperty: Story = {
 
 // Complete Figma Example (matching the design)
 export const FigmaExample: Story = {
+  args: {
+    items: [],
+  },
   render: () => {
     const [selectedIds, setSelectedIds] = useState<string[]>(['1', '4', '7']);
 
@@ -671,7 +708,7 @@ export const FigmaExample: Story = {
       { label: 'USDT', value: 'USDT' },
       { label: 'BTC', value: 'BTC' },
       { label: 'ETH', value: 'ETH' },
-      { label: 'BNB', value: 'BNB' },
+      { label: 'LTC', value: 'LTC' },
     ];
 
     return (
