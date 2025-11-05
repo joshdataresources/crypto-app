@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: #283043;
+  background-color: var(--color-divider-border-03);
   gap: 1px;
   border-radius: 8px;
   overflow: hidden;
@@ -18,7 +18,7 @@
 /* Filters section with pill tabs */
 .crypto-selector-dropdown__filters {
   padding: 8px 16px;
-  background-color: #373e4d;
+  background-color: var(--color-background-02);
 }
 
 /* List container */
@@ -37,7 +37,7 @@
   width: 100%;
   height: 44px;
   padding: 8px 12px;
-  background-color: #373e4d;
+  background-color: var(--color-background-02);
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -46,12 +46,12 @@
 
 /* Hover state */
 .crypto-selector-dropdown__item:hover {
-  background-color: #2a303c;
+  background-color: var(--color-button-2nd-bg);
 }
 
 /* Selected state */
 .crypto-selector-dropdown__item--selected {
-  background-color: #2a303c;
+  background-color: var(--color-button-2nd-bg);
 }
 
 /* Fixed state (non-selectable) */
@@ -61,12 +61,12 @@
 }
 
 .crypto-selector-dropdown__item--fixed:hover {
-  background-color: #373e4d;
+  background-color: var(--color-background-02);
 }
 
 /* Focus state for accessibility */
 .crypto-selector-dropdown__item:focus-visible {
-  outline: 2px solid #297fff;
+  outline: 2px solid var(--color-brand-solid);
   outline-offset: -2px;
 }
 
@@ -110,7 +110,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 1;
-  color: #ffffff;
+  color: var(--color-text-primary);
 }
 
 
@@ -120,11 +120,11 @@
 }
 
 .crypto-selector-dropdown__list::-webkit-scrollbar-track {
-  background: #262d3e;
+  background: var(--color-forms-background);
 }
 
 .crypto-selector-dropdown__list::-webkit-scrollbar-thumb {
-  background: #373e4d;
+  background: var(--color-background-02);
   border-radius: 4px;
 }
 

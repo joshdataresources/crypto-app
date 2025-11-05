@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TypeSelector } from '../../components/tabs/TypeSelector';
+import { TypeSelector, type TypeSelectorValue } from '../../components/tabs/TypeSelector';
 import { useState } from 'react';
+import { colorsDark } from '../../tokens/colors';
 
 const meta = {
   title: 'Components/Tabs/TypeSelector',
@@ -9,71 +10,123 @@ const meta = {
     layout: 'centered',
     docs: {
       description: {
-        component: 'Toggle tabs for switching between Pairs and Crypto views. Small compact design with blue active state.',
+        component: 'Generic toggle tabs for switching between two types. Small compact design with blue active state. Customizable labels for different use cases (Pairs/Crypto, Candle/Area, etc.).',
       },
     },
   },
   tags: ['autodocs'],
+  argTypes: {
+    type1: {
+      control: 'text',
+      description: 'Label for first option',
+    },
+    type2: {
+      control: 'text',
+      description: 'Label for second option',
+    },
+    activeType: {
+      control: 'select',
+      options: ['type1', 'type2'],
+      description: 'Currently active type',
+    },
+  },
 } satisfies Meta<typeof TypeSelector>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// Default story with Pairs selected
-export const Default: Story = {
+// Default story with Pairs/Crypto
+export const PairsCrypto: Story = {
   args: {
-    activeType: 'pairs',
+    type1: 'Pairs',
+    type2: 'Crypto',
+    activeType: 'type1',
     onChange: () => {},
   },
 };
 
-// Crypto selected
-export const CryptoSelected: Story = {
+// Candle/Area chart toggle
+export const CandleArea: Story = {
   args: {
-    activeType: 'crypto',
+    type1: 'Candle',
+    type2: 'Area',
+    activeType: 'type1',
     onChange: () => {},
   },
 };
 
-// Interactive example
-export const Interactive: Story = {
+// Buy/Sell toggle
+export const BuySell: Story = {
   args: {
-    activeType: 'pairs',
+    type1: 'Buy',
+    type2: 'Sell',
+    activeType: 'type1',
     onChange: () => {},
   },
+};
+
+// Interactive example with Pairs/Crypto
+export const InteractivePairsCrypto: Story = {
   render: () => {
-    const [activeType, setActiveType] = useState<'pairs' | 'crypto'>('pairs');
+    const [activeType, setActiveType] = useState<TypeSelectorValue>('type1');
 
     return (
       <div style={{ padding: '20px' }}>
         <TypeSelector
+          type1="Pairs"
+          type2="Crypto"
           activeType={activeType}
           onChange={setActiveType}
         />
-        <p style={{ color: '#9BAACE', marginTop: '16px', fontSize: '14px' }}>
-          Selected: <strong style={{ color: '#FFFFFF' }}>{activeType}</strong>
+        <p style={{ color: colorsDark.text.secondary, marginTop: '16px', fontSize: '14px' }}>
+          Selected: <strong style={{ color: colorsDark.text.primary }}>{activeType === 'type1' ? 'Pairs' : 'Crypto'}</strong>
         </p>
       </div>
     );
   },
 };
 
-// All states side by side
-export const AllStates: Story = {
-  args: {
-    activeType: 'pairs',
-    onChange: () => {},
+// Interactive example with Candle/Area
+export const InteractiveCandleArea: Story = {
+  render: () => {
+    const [activeType, setActiveType] = useState<TypeSelectorValue>('type1');
+
+    return (
+      <div style={{ padding: '20px' }}>
+        <TypeSelector
+          type1="Candle"
+          type2="Area"
+          activeType={activeType}
+          onChange={setActiveType}
+        />
+        <p style={{ color: colorsDark.text.secondary, marginTop: '16px', fontSize: '14px' }}>
+          Chart Type: <strong style={{ color: colorsDark.text.primary }}>{activeType === 'type1' ? 'Candle' : 'Area'}</strong>
+        </p>
+      </div>
+    );
   },
+};
+
+// All variants
+export const AllVariants: Story = {
   render: () => {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', padding: '20px' }}>
         <div>
-          <p style={{ color: '#9BAACE', marginBottom: '8px', fontSize: '12px' }}>Pairs Active</p>
-          <TypeSelector activeType="pairs" onChange={() => {}} />
+          <p style={{ color: colorsDark.text.secondary, marginBottom: '8px', fontSize: '12px' }}>Pairs / Crypto</p>
+          <TypeSelector type1="Pairs" type2="Crypto" activeType="type1" onChange={() => {}} />
         </div>
         <div>
-          <p style={{ color: '#9BAACE', marginBottom: '8px', fontSize: '12px' }}>Crypto Active</p>
-          <TypeSelector activeType="crypto" onChange={() => {}} />
+          <p style={{ color: colorsDark.text.secondary, marginBottom: '8px', fontSize: '12px' }}>Candle / Area</p>
+          <TypeSelector type1="Candle" type2="Area" activeType="type2" onChange={() => {}} />
+        </div>
+        <div>
+          <p style={{ color: colorsDark.text.secondary, marginBottom: '8px', fontSize: '12px' }}>Buy / Sell</p>
+          <TypeSelector type1="Buy" type2="Sell" activeType="type1" onChange={() => {}} />
+        </div>
+        <div>
+          <p style={{ color: colorsDark.text.secondary, marginBottom: '8px', fontSize: '12px' }}>List / Grid</p>
+          <TypeSelector type1="List" type2="Grid" activeType="type2" onChange={() => {}} />
         </div>
       </div>
     );

@@ -1,0 +1,51 @@
+/**
+ * Design Tokens - CSS Custom Properties
+ *
+ * CSS variables generated from the design system color tokens
+ * Source: apex-mobile-v6-dark
+ *
+ * Usage in CSS:
+ * .my-component {
+ *   color: var(--color-text-primary);
+ *   background: var(--color-background-02);
+ * }
+ */
+
+:root {
+  /* Highlights */
+  --color-brand-solid: #297FFF;
+  --color-brand-background: #1C4C94;
+  --color-brand-disabled: #5576FA;
+  --color-bitcoin: #FC9416;
+  --color-buy: #00C938;
+  --color-buy-disabled: #04C654;
+  --color-sell: #F62967;
+  --color-sell-disabled: #DA1651;
+  --color-error: #ED3737;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #9BAACE;
+  --color-text-disabled: #C2CADB;
+  --color-text-inverse: #FFFFFF;
+
+  /* Forms */
+  --color-forms-border: #151A27;
+  --color-forms-background: #262D3E;
+  --color-forms-on-dark: #000000;
+
+  /* Buttons */
+  --color-button-2nd-bg: #2A303C;
+  --color-button-2nd-border: #171A20;
+
+  /* Backgrounds */
+  --color-background-01: #313848;
+  --color-background-02: #373E4D;
+  --color-toolbar-bg-blur: #313848;
+
+  /* Dividers */
+  --color-divider-border-01: #0A0C12;
+  --color-divider-border-02: #182034;
+  --color-divider-border-03: #283043;
+  --color-divider-border-04-transparent: #CED6E5;
+}

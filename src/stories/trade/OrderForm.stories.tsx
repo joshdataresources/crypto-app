@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { OrderForm } from '../../components/trade/OrderForm';
+import type { DropdownSelectorItem } from '../../components/selectors/CryptoSelectorDropdown';
+import { colorsDark } from '../../tokens/colors';
 
 const meta = {
   title: 'Components/Trade/OrderForm',
@@ -107,16 +109,35 @@ Full-featured order form for placing crypto trades with market, limit, and stop 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Sample selector data
+const selectorItems: DropdownSelectorItem[] = [
+  // Pairs
+  { id: '1', type: 'Pair', displayName: 'BTCUSDT', crypto: 'BTC', secondaryCrypto: 'USDT', category: 'USDT', selectable: true, showCheck: false },
+  { id: '2', type: 'Pair', displayName: 'ETHUSDT', crypto: 'ETH', secondaryCrypto: 'USDT', category: 'USDT', selectable: true, showCheck: false },
+  { id: '3', type: 'Pair', displayName: 'LTCUSDT', crypto: 'LTC', secondaryCrypto: 'USDT', category: 'USDT', selectable: true, showCheck: false },
+  { id: '4', type: 'Pair', displayName: 'XRPUSDT', crypto: 'XRP', secondaryCrypto: 'USDT', category: 'USDT', selectable: true, showCheck: false },
+  { id: '5', type: 'Pair', displayName: 'ETHBTC', crypto: 'ETH', secondaryCrypto: 'BTC', category: 'BTC', selectable: true, showCheck: false },
+  { id: '6', type: 'Pair', displayName: 'LTCBTC', crypto: 'LTC', secondaryCrypto: 'BTC', category: 'BTC', selectable: true, showCheck: false },
+];
+
+const filterTabs = [
+  { label: 'USDT', value: 'USDT' },
+  { label: 'BTC', value: 'BTC' },
+  { label: 'ETH', value: 'ETH' },
+];
+
 // Buy Market Order
 export const BuyMarket: Story = {
   args: {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'market',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -127,10 +148,12 @@ export const BuyLimit: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -141,10 +164,12 @@ export const BuyStop: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'stop',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -155,10 +180,12 @@ export const SellMarket: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'market',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -169,10 +196,12 @@ export const SellLimit: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -183,10 +212,12 @@ export const SellStop: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'stop',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -197,10 +228,12 @@ export const BuyStopLimit: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'stop-limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -211,10 +244,12 @@ export const SellStopLimit: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'stop-limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -225,10 +260,12 @@ export const BuyTrailingStopMarket: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'trailing-stop-market',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -239,10 +276,12 @@ export const SellTrailingStopMarket: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'trailing-stop-market',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -253,10 +292,12 @@ export const BuyTrailingStopLimit: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'trailing-stop-limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -267,10 +308,12 @@ export const SellTrailingStopLimit: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'trailing-stop-limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -281,10 +324,12 @@ export const BuyReserveOrder: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'reserve-order',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -295,10 +340,12 @@ export const SellReserveOrder: Story = {
     orderSide: 'sell',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'reserve-order',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -309,10 +356,12 @@ export const ETHTrading: Story = {
     orderSide: 'buy',
     primaryCrypto: 'ETH',
     secondaryCrypto: 'USDT',
-    displayText: 'ETHUSD',
+    displayText: 'ETHUSDT',
     initialOrderType: 'limit',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -323,7 +372,7 @@ export const AllOrderTypes: Story = {
     return (
       <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#9BAACE', fontSize: '12px', margin: 0 }}>Market Order</h3>
+          <h3 style={{ color: colorsDark.text.secondary, fontSize: '12px', margin: 0 }}>Market Order</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -333,7 +382,7 @@ export const AllOrderTypes: Story = {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#9BAACE', fontSize: '12px', margin: 0 }}>Limit Order</h3>
+          <h3 style={{ color: colorsDark.text.secondary, fontSize: '12px', margin: 0 }}>Limit Order</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -343,7 +392,7 @@ export const AllOrderTypes: Story = {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#9BAACE', fontSize: '12px', margin: 0 }}>Stop Order</h3>
+          <h3 style={{ color: colorsDark.text.secondary, fontSize: '12px', margin: 0 }}>Stop Order</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -363,7 +412,7 @@ export const BuyVsSell: Story = {
     return (
       <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#00C938', fontSize: '12px', margin: 0 }}>Buy Order</h3>
+          <h3 style={{ color: colorsDark.highlights.buy, fontSize: '12px', margin: 0 }}>Buy Order</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -373,7 +422,7 @@ export const BuyVsSell: Story = {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#F62967', fontSize: '12px', margin: 0 }}>Sell Order</h3>
+          <h3 style={{ color: colorsDark.highlights.sell, fontSize: '12px', margin: 0 }}>Sell Order</h3>
           <OrderForm
             orderSide="sell"
             primaryCrypto="BTC"
@@ -393,11 +442,13 @@ export const PillTabsStyle: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'limit',
     tabStyle: 'pill',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -408,11 +459,13 @@ export const BasicTabsStyle: Story = {
     orderSide: 'buy',
     primaryCrypto: 'BTC',
     secondaryCrypto: 'USDT',
-    displayText: 'BTCUSD',
+    displayText: 'BTCUSDT',
     initialOrderType: 'limit',
     tabStyle: 'basic',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
     onClose: () => console.log('Close clicked'),
-    onSelectorClick: () => console.log('Selector clicked'),
     onSubmit: (data) => console.log('Submit:', data),
   },
 };
@@ -423,7 +476,7 @@ export const TabStyleComparison: Story = {
     return (
       <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#9BAACE', fontSize: '12px', margin: 0 }}>Pill Tabs (Default)</h3>
+          <h3 style={{ color: colorsDark.text.secondary, fontSize: '12px', margin: 0 }}>Pill Tabs (Default)</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -434,7 +487,7 @@ export const TabStyleComparison: Story = {
           />
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', alignItems: 'center' }}>
-          <h3 style={{ color: '#9BAACE', fontSize: '12px', margin: 0 }}>Basic Tabs</h3>
+          <h3 style={{ color: colorsDark.text.secondary, fontSize: '12px', margin: 0 }}>Basic Tabs</h3>
           <OrderForm
             orderSide="buy"
             primaryCrypto="BTC"
@@ -444,6 +497,36 @@ export const TabStyleComparison: Story = {
             tabStyle="basic"
           />
         </div>
+      </div>
+    );
+  },
+};
+
+// With Working Selector Dropdown
+export const WithSelectorDropdown: Story = {
+  args: {
+    orderSide: 'buy',
+    primaryCrypto: 'BTC',
+    secondaryCrypto: 'USDT',
+    displayText: 'BTCUSDT',
+    initialOrderType: 'limit',
+    tabStyle: 'pill',
+    selectorItems,
+    filterTabs,
+    enableSelectorDropdown: true,
+    onClose: () => console.log('Close clicked'),
+    onSubmit: (data) => console.log('Submit:', data),
+  },
+  render: (args) => {
+    return (
+      <div style={{ background: colorsDark.forms.background, padding: '20px', minHeight: '600px' }}>
+        <h3 style={{ color: colorsDark.text.secondary, marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+          Order Form with Working Dropdown (Click Selector to Open)
+        </h3>
+        <OrderForm {...args} />
+        <p style={{ color: colorsDark.text.secondary, marginTop: '16px', fontSize: '12px' }}>
+          Click the crypto selector in the header to open the dropdown and select a different trading pair.
+        </p>
       </div>
     );
   },

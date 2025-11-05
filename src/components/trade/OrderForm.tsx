@@ -6,6 +6,8 @@ import { PillTabs, type PillTab } from '../tabs/PillTabs';
 import { Input } from '../inputs/Input';
 import { CurrencyPairInput } from '../inputs/CurrencyPairInput';
 import { TransactionDetails, type TransactionDetailRow } from './TransactionDetails';
+import { CryptoSelectorDropdown } from '../selectors/CryptoSelectorDropdown';
+import type { DropdownSelectorItem } from '../selectors/CryptoSelectorDropdown';
 import type { CryptoBadgeName } from '../badges/CryptoBadge';
 import './OrderForm.css';
 
@@ -24,9 +26,15 @@ export interface OrderFormProps {
   initialOrderType?: OrderType;
   /** Tab style - pill tabs (default) or basic tabs */
   tabStyle?: TabStyle;
+  /** Selector items for dropdown */
+  selectorItems?: DropdownSelectorItem[];
+  /** Filter tabs for selector */
+  filterTabs?: PillTab[];
+  /** Enable built-in selector dropdown */
+  enableSelectorDropdown?: boolean;
   /** Close handler */
   onClose?: () => void;
-  /** Selector click handler */
+  /** Selector click handler (deprecated if enableSelectorDropdown is true) */
   onSelectorClick?: () => void;
   /** Submit handler */
   onSubmit?: (data: OrderFormData) => void;
@@ -84,6 +92,9 @@ export const OrderForm: React.FC<OrderFormProps> = ({
   displayText = 'BTCUSD',
   initialOrderType = 'market',
   tabStyle = 'pill',
+  selectorItems,
+  filterTabs,
+  enableSelectorDropdown = false,
   onClose,
   onSelectorClick,
   onSubmit,
@@ -91,6 +102,10 @@ export const OrderForm: React.FC<OrderFormProps> = ({
 }) => {
   const [currentOrderSide, setCurrentOrderSide] = useState<'buy' | 'sell'>(orderSide);
   const [orderType, setOrderType] = useState<OrderType>(initialOrderType);
+  const [isSelectorOpen, setIsSelectorOpen] = useState(false);
+  const [currentPrimaryCrypto, setCurrentPrimaryCrypto] = useState<CryptoBadgeName>(primaryCrypto);
+  const [currentSecondaryCrypto, setCurrentSecondaryCrypto] = useState<CryptoBadgeName>(secondaryCrypto);
+  const [currentDisplayText, setCurrentDisplayText] = useState(displayText);
   const [limitPrice, setLimitPrice] = useState('18,000.00');
   const [stopPrice, setStopPrice] = useState('18,000.00');
   const [topAmount, setTopAmount] = useState('0.5');
@@ -106,6 +121,30 @@ export const OrderForm: React.FC<OrderFormProps> = ({
   // Toggle between buy and sell
   const handleToggleOrderSide = () => {
     setCurrentOrderSide(prev => prev === 'buy' ? 'sell' : 'buy');
+  };
+
+  // Handle selector click
+  const handleSelectorClick = () => {
+    if (enableSelectorDropdown) {
+      setIsSelectorOpen(!isSelectorOpen);
+    } else if (onSelectorClick) {
+      onSelectorClick();
+    }
+  };
+
+  // Handle selection change
+  const handleSelectionChange = (selectedIds: string[]) => {
+    if (selectedIds.length > 0 && selectorItems) {
+      const selectedItem = selectorItems.find(item => item.id === selectedIds[0]);
+      if (selectedItem) {
+        setCurrentPrimaryCrypto(selectedItem.crypto as CryptoBadgeName);
+        if (selectedItem.type === 'Pair' && selectedItem.secondaryCrypto) {
+          setCurrentSecondaryCrypto(selectedItem.secondaryCrypto as CryptoBadgeName);
+        }
+        setCurrentDisplayText(selectedItem.displayName);
+        setIsSelectorOpen(false);
+      }
+    }
   };
 
   // Map order side to transaction type
@@ -153,17 +192,37 @@ export const OrderForm: React.FC<OrderFormProps> = ({
 
   return (
     <div className={`order-form ${className}`}>
-      {/* Header */}
-      <TransactionHeader
-        type={transactionType}
-        state="default"
-        primaryCrypto={primaryCrypto}
-        secondaryCrypto={secondaryCrypto}
-        displayText={displayText}
-        onClose={onClose}
-        onSelectorClick={onSelectorClick}
-        onActionClick={handleToggleOrderSide}
-      />
+      {/* Header with relative positioning for dropdown */}
+      <div style={{ position: 'relative' }}>
+        <TransactionHeader
+          type={transactionType}
+          state="default"
+          primaryCrypto={currentPrimaryCrypto}
+          secondaryCrypto={currentSecondaryCrypto}
+          displayText={currentDisplayText}
+          onClose={onClose}
+          onSelectorClick={handleSelectorClick}
+          onActionClick={handleToggleOrderSide}
+        />
+
+        {/* Dropdown Selector */}
+        {enableSelectorDropdown && isSelectorOpen && selectorItems && (
+          <div style={{
+            position: 'absolute',
+            top: '72px',
+            left: '20px',
+            right: '20px',
+            zIndex: 1000,
+          }}>
+            <CryptoSelectorDropdown
+              items={selectorItems}
+              filterTabs={filterTabs}
+              multiSelect={false}
+              onChange={handleSelectionChange}
+            />
+          </div>
+        )}
+      </div>
 
       {/* Scrollable Content */}
       <div className="order-form__content">

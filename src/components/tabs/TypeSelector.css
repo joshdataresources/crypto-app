@@ -26,7 +26,7 @@
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
-  color: #9BAACE; /* Text Secondary */
+  color: var(--color-text-secondary);
   white-space: nowrap;
 }
 
@@ -35,10 +35,10 @@
 }
 
 .type-selector__tab--active {
-  background: #297FFF; /* Brand Solid */
-  color: #FFFFFF; /* Text Inverse */
+  background: var(--color-brand-solid);
+  color: var(--color-text-inverse);
 }
 
 .type-selector__tab--active:hover {
-  background: #297FFF;
+  background: var(--color-brand-solid);
 }

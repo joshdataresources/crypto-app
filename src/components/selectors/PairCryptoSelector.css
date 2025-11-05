@@ -4,7 +4,7 @@
  */
 
 .pair-crypto-selector {
-  background: #283043; /* Border 03 */
+  background: var(--color-divider-border-03);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.37);
@@ -12,7 +12,7 @@
 }
 
 .pair-crypto-selector__header {
-  background: #373E4D; /* Background 02 */
+  background: var(--color-background-02);
   padding: 8px 12px;
-  border-bottom: 1px solid #283043; /* Border 03 */
+  border-bottom: 1px solid var(--color-divider-border-03);
 }

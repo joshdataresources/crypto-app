@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { PairCryptoSelector } from '../../components/selectors/PairCryptoSelector';
 import type { DropdownSelectorItem } from '../../components/selectors/CryptoSelectorDropdown';
 import { useState } from 'react';
+import { colorsDark } from '../../tokens/colors';
 
 const meta = {
   title: 'Components/Selectors/PairCryptoSelector',
@@ -78,7 +79,7 @@ export const Interactive: Story = {
 
     return (
       <div style={{ padding: '20px' }}>
-        <h3 style={{ color: '#9BAACE', marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+        <h3 style={{ color: colorsDark.text.secondary, marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
           Select Trading Pair or Cryptocurrency
         </h3>
         <PairCryptoSelector
@@ -88,11 +89,11 @@ export const Interactive: Story = {
           multiSelect={false}
           onChange={setSelectedIds}
         />
-        <div style={{ marginTop: '16px', color: '#9BAACE', fontSize: '12px' }}>
+        <div style={{ marginTop: '16px', color: colorsDark.text.secondary, fontSize: '12px' }}>
           Selected: {selectedIds.length > 0 ? (
-            <span style={{ color: '#FFFFFF' }}>{selectedIds.join(', ')}</span>
+            <span style={{ color: colorsDark.text.primary }}>{selectedIds.join(', ')}</span>
           ) : (
-            <span style={{ color: '#9BAACE' }}>None</span>
+            <span style={{ color: colorsDark.text.secondary }}>None</span>
           )}
         </div>
       </div>
@@ -113,7 +114,7 @@ export const MultiSelect: Story = {
 
     return (
       <div style={{ padding: '20px' }}>
-        <h3 style={{ color: '#9BAACE', marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+        <h3 style={{ color: colorsDark.text.secondary, marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
           Multi-Select Mode
         </h3>
         <PairCryptoSelector
@@ -123,11 +124,11 @@ export const MultiSelect: Story = {
           multiSelect={true}
           onChange={setSelectedIds}
         />
-        <div style={{ marginTop: '16px', color: '#9BAACE', fontSize: '12px' }}>
+        <div style={{ marginTop: '16px', color: colorsDark.text.secondary, fontSize: '12px' }}>
           Selected ({selectedIds.length}): {selectedIds.length > 0 ? (
-            <span style={{ color: '#FFFFFF' }}>{selectedIds.join(', ')}</span>
+            <span style={{ color: colorsDark.text.primary }}>{selectedIds.join(', ')}</span>
           ) : (
-            <span style={{ color: '#9BAACE' }}>None</span>
+            <span style={{ color: colorsDark.text.secondary }}>None</span>
           )}
         </div>
       </div>
@@ -155,7 +156,7 @@ export const Comparison: Story = {
     return (
       <div style={{ display: 'flex', gap: '24px', padding: '20px' }}>
         <div>
-          <h3 style={{ color: '#9BAACE', marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+          <h3 style={{ color: colorsDark.text.secondary, marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
             Pairs View
           </h3>
           <PairCryptoSelector
@@ -166,7 +167,7 @@ export const Comparison: Story = {
           />
         </div>
         <div>
-          <h3 style={{ color: '#9BAACE', marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
+          <h3 style={{ color: colorsDark.text.secondary, marginBottom: '16px', fontSize: '14px', fontWeight: 'bold' }}>
             Crypto View
           </h3>
           <PairCryptoSelector

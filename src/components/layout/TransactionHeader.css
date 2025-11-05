@@ -5,10 +5,9 @@
 
 /* Container */
 .transaction-header {
-  background-color: #373E4D;
+  background-color: var(--color-background-02);
   width: 100%;
   display: flex;
-  padding: 0 20px 0 20px;
   flex-direction: column;
   align-items: center;
   padding-bottom: 8px;
@@ -22,13 +21,13 @@
   align-items: center;
   justify-content: center;
   padding: 8px 136px;
-  background-color: #373E4D;
+  background-color: var(--color-background-02);
 }
 
 .transaction-header__dragger-bar {
   width: 52px;
   height: 4px;
-  background-color: #2A303C;
+  background-color: var(--color-button-2nd-bg);
   border-radius: 2px;
 }
 
@@ -39,6 +38,7 @@
   align-items: flex-start;
   padding: 0 20px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 /* Action Button */
@@ -66,18 +66,18 @@
 
 /* Action Button Colors */
 .transaction-header__action--buy {
-  background-color: #00C938;
+  background-color: var(--color-buy);
   box-shadow: 0px 6px 10px 0px rgba(4, 198, 84, 0.22);
 }
 
 .transaction-header__action--sell {
-  background-color: #F62967;
+  background-color: var(--color-sell);
   box-shadow: 0px 6px 10px 0px rgba(218, 22, 81, 0.2);
 }
 
 .transaction-header__action--secondary {
-  background-color: #373E4D;
-  border: 1px solid #283043;
+  background-color: var(--color-background-02);
+  border: 1px solid var(--color-divider-border-03);
   box-shadow: none;
 }
 
@@ -91,19 +91,19 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 12px;
-  background-color: #373E4D;
-  border: 1px solid #283043;
+  background-color: var(--color-background-02);
+  border: 1px solid var(--color-divider-border-03);
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .transaction-header__selector:hover {
-  background-color: #2A303C;
+  background-color: var(--color-button-2nd-bg);
 }
 
 .transaction-header__selector:active {
-  background-color: #262D3E;
+  background-color: var(--color-forms-background);
 }
 
 /* Selector Content */
@@ -126,15 +126,15 @@
 }
 
 .transaction-header__label--buy {
-  color: #00C938;
+  color: var(--color-buy);
 }
 
 .transaction-header__label--sell {
-  color: #F62967;
+  color: var(--color-sell);
 }
 
 .transaction-header__label--secondary {
-  color: #9BAACE;
+  color: var(--color-text-secondary);
 }
 
 /* Display Text */
@@ -143,7 +143,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1;
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -155,7 +155,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 1;
-  color: #FFFFFF;
+  color: var(--color-text-primary);
   white-space: nowrap;
 }
 
@@ -175,16 +175,16 @@
   flex-shrink: 0;
   padding: 12px;
   background-color: transparent;
-  border: 1px solid #283043;
+  border: 1px solid var(--color-divider-border-03);
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .transaction-header__close:hover {
-  background-color: #2A303C;
+  background-color: var(--color-button-2nd-bg);
 }
 
 .transaction-header__close:active {
-  background-color: #262D3E;
+  background-color: var(--color-forms-background);
 }
