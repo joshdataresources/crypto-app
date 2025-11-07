@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createChart, type IChartApi, type ISeriesApi, CandlestickSeries, AreaSeries } from 'lightweight-charts';
 import { TypeSelector } from '../tabs/TypeSelector';
+import { PillTabs, type PillTab } from '../tabs/PillTabs';
 import {
   fetchAreaChartData,
   fetchCandlestickChartData,
@@ -39,7 +40,7 @@ export interface CryptoChartProps {
  *
  * Features:
  * - **Chart Types**: Candlestick (OHLC) and Area charts
- * - **Toggle**: Switch between Candle and Area views
+ * - **Toggle**: Switch between Candle and Area views with PillTabs
  * - **Time Periods**: 1H, 1D, 1W, 1M, 1Y, All
  * - **Real Data**: Live data from CoinGecko API (free, no key required)
  * - **Current Price**: Displayed above chart
@@ -237,6 +238,12 @@ export const CryptoChart: React.FC<CryptoChartProps> = ({
 
   const timePeriods: TimePeriod[] = ['1H', '1D', '1W', '1M', '1Y', 'All'];
 
+  // Convert time periods to PillTab format
+  const timePeriodTabs: PillTab[] = timePeriods.map((period) => ({
+    label: period,
+    value: period,
+  }));
+
   return (
     <div className={`crypto-chart ${className}`}>
       {/* Header */}
@@ -273,20 +280,11 @@ export const CryptoChart: React.FC<CryptoChartProps> = ({
 
       {/* Time Period Selector */}
       {showTimePeriodSelector && (
-        <div className="crypto-chart__time-periods">
-          {timePeriods.map((period) => (
-            <button
-              key={period}
-              type="button"
-              className={`crypto-chart__period-button ${
-                timePeriod === period ? 'crypto-chart__period-button--active' : ''
-              }`}
-              onClick={() => handlePeriodChange(period)}
-            >
-              {period}
-            </button>
-          ))}
-        </div>
+        <PillTabs
+          tabs={timePeriodTabs}
+          activeTab={timePeriod}
+          onChange={(value) => handlePeriodChange(value as TimePeriod)}
+        />
       )}
     </div>
   );

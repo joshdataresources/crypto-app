@@ -17,8 +17,8 @@ Display live cryptocurrency price data with candlestick or area chart visualizat
 
 ## Features
 - **Chart Types**: Candlestick (OHLC) and Area charts
-- **Toggle**: Switch between Candle and Area views
-- **Time Periods**: 1H, 1D, 1W, 1M, 1Y, All
+- **Type Toggle**: Switch between Candle and Area views using TypeSelector component
+- **Time Periods**: 1H, 1D, 1W, 1M, 1Y, All using PillTabs component
 - **Real Data**: Live data from CoinGecko API (free, no key required)
 - **Current Price**: Displayed above chart
 - **Dark Theme**: Matches apex-mobile-v6-dark design system
@@ -31,6 +31,9 @@ Display live cryptocurrency price data with candlestick or area chart visualizat
 - CoinGecko Public API (no authentication required)
 - Historical price data (OHLC and market prices)
 - Real-time updates on time period change
+
+## Note
+When viewing the Docs page, multiple charts load simultaneously which may hit rate limits. View individual stories for best performance.
 
 ## Usage Example
 
